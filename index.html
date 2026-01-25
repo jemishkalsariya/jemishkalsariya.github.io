@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Matchbox</title>
+  <script>
+    var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+    // Android → Play Store
+    if (/android/i.test(userAgent)) {
+      window.location.href = "https://play.google.com/store/apps/details?id=com.yourcompany.yourapp";
+    }
+    // iOS → App Store
+    else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+      window.location.href = "https://apps.apple.com/app/idYOUR_APP_ID";
+    }
+    // Other → normal website or nothing
+    else {
+      document.body.innerHTML = "<h2>App not installed</h2>";
+    }
+  </script>
+</head>
+<body>
+</body>
+</html>
