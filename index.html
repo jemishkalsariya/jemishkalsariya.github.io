@@ -1,21 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Matchbox</title>
+  <meta charset="UTF-8">
+  <title>Redirecting...</title>
   <script>
-    var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    var ua = navigator.userAgent.toLowerCase();
 
-    // Android → Play Store
-    if (/android/i.test(userAgent)) {
-      window.location.href = "https://play.google.com/store/apps/details?id=com.jio.myjio&pcampaignid=web_share";
-    }
-    // iOS → App Store
-    else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-      window.location.href = "https://play.google.com/store/apps/details?id=com.jio.myjio&pcampaignid=web_share";
-    }
-    // Other → normal website or nothing
-    else {
-      document.body.innerHTML = "<h2>App not installed</h2>";
+    if (ua.indexOf("android") > -1) {
+      window.location.href =
+        "https://play.google.com/store/apps/details?id=com.jio.myjio&pcampaignid=web_share";
+    } else if (ua.indexOf("iphone") > -1 || ua.indexOf("ipad") > -1) {
+      window.location.href =
+        "https://apps.apple.com/app/idYOUR_APP_ID";
     }
   </script>
 </head>
