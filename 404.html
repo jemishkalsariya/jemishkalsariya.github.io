@@ -1,20 +1,23 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Redirecting...</title>
   <script>
-    var ua = navigator.userAgent.toLowerCase();
+    // Change this in future if Play Store target changes
+    const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=com.freereels.app';
 
-    if (ua.indexOf("android") > -1) {
-      window.location.href =
-        "https://play.google.com/store/apps/details?id=com.freereels.app";
-    } else if (ua.indexOf("iphone") > -1 || ua.indexOf("ipad") > -1) {
-      window.location.href =
-        "https://apps.apple.com/app/idYOUR_APP_ID";
-    }
+    // Keep full deep link URL including video query
+    const full = window.location.href;
+
+    // Try same URL first (Android App Links opens app when installed + verified)
+    window.location.replace(full);
+
+    // Fallback if app not installed
+    setTimeout(() => {
+      window.location.replace(PLAY_STORE_URL);
+    }, 1200);
   </script>
 </head>
-<body>
-</body>
-</html>
+<body></body>
