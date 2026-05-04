@@ -10,16 +10,23 @@
   var redirect = params.get("redirect");
 
   if (redirect && redirect.indexOf('404') === -1) {
-    var appUrl = "https://jemishkalsariya.github.io" + redirect;
-
-    // App Link try
-    window.location.href = appUrl;
-
-    // Fallback Play Store
-    setTimeout(function() {
-      window.location.href =
-        "https://play.google.com/store/apps/details?id=com.freereels.app";
-    }, 1500);
+    var videoParam = redirect.split('?video=')[1];
+    
+    if (videoParam) {
+      var appUrl = "https://jemishkalsariya.github.io" + redirect;
+      var storeUrl = "https://play.google.com/store/apps/details?id=com.freereels.app";
+      
+      // hidden iframe trick — page navigate નથી થઈ જતું
+      var iframe = document.createElement('iframe');
+      iframe.style.display = 'none';
+      iframe.src = appUrl;
+      document.body.appendChild(iframe);
+      
+      // Play Store fallback
+      setTimeout(function() {
+        window.location.href = storeUrl;
+      }, 2000);
+    }
   }
 </script>
 </body>
