@@ -9,7 +9,7 @@
   var params = new URLSearchParams(window.location.search);
   var redirect = params.get("redirect");
 
-  if (redirect) {
+  if (redirect && redirect.indexOf('404') === -1) {
     var appUrl = "https://jemishkalsariya.github.io" + redirect;
 
     // App Link try
