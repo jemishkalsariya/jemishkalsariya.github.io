@@ -13,8 +13,11 @@
     var videoParam = redirect.split('?video=')[1];
     
     if (videoParam) {
-      var appUrl = "https://zyrobox.com" + redirect;
+      var appUrl = "https://jemishkalsariya.github.io" + redirect;
+      // var storeUrl = "https://play.google.com/store/apps/details?id=com.freereels.app";
       var storeUrl = "https://play.google.com/store/apps/details?id=com.freereels.app&referrer=" + encodeURIComponent(videoParam);
+
+      // hidden iframe trick — page navigate નથી થઈ જતું
       var iframe = document.createElement('iframe');
       iframe.style.display = 'none';
       iframe.src = appUrl;
