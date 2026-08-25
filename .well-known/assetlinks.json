@@ -3,7 +3,7 @@
     "relation": ["delegate_permission/common.handle_all_urls"],
     "target": {
       "namespace": "android_app",
-      "package_name": "com.example.growbox",
+      "package_name": "com.zyrobox.mobile.app",
       "sha256_cert_fingerprints": [
         "9B:B1:6C:FA:BC:52:AA:53:A6:8A:1A:42:F0:95:75:5A:F3:2A:65:A2:07:7F:13:A8:EB:5D:33:0A:5D:43:47:AA"
       ]
